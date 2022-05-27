@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+
+{% block body %}
+{% if session['TF'] %}
+
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            
+            <div class="title">
+                <div class="row">
+                    <div class="col"><h4><b>Sepetim</b></h4></div>
+                    <div class="col-3 align-self-auto text-left"><b>Adet / Kg</b></div>
+                    <div class="col-4 align-self-auto text-left"><b>Toplam</b></div>
+              
+                </div>
+            </div>   
+            {% for data in datas %} 
+            <form action="/delete" method="post" class="row border-top border-bottom">    
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" src="{{data['img_url']}}"></div>
+                    <div class="col">
+                        <div class="row">{{data['urun_isim']}}</div>
+                        <div class="row text-muted">{{data['fiyat']}} TL</div>
+                    </div>
+                    <div class="col">
+                       <a href="#">{{data['adet']}}</a>
+                    </div>
+                    <input type="hidden" name = "delete" value="{{data['urun_isim']}}">
+                    <div class="col">₺ {{data['islem_tutar']}}<button class="close" type="submit">&#10005;</button></div>
+                </div>
+            </form>
+            {% endfor %}
+            <div class="back-to-shop"><a href="/meyvelermenu">&leftarrow;<span class="text-muted">Meyveler Menüsüne Dön</span></a> <br> <a href="/sebzelermenu">&leftarrow;<span class="text-muted">Sebzeler Menüsüne Dön</span></a></div>
+        </div>
+        
+
+        <!--ödeme kısmı-->
+        <div class="col-md-3 summary">
+            <br> 
+            <div><h5><b>Fatura</b></h5></div>
+
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                {% for data in datas %}
+                <div>
+                    <span class="rounded-left"><b>{{data['urun_isim']}}</b></span>
+                    <span class="text-right urunFiyat">₺ {{data['islem_tutar']}}</span>
+                </div>
+                {% endfor %}
+                <br><br>
+                <div class="col text-right"><b>Toplam Tutar : </b> ₺ <b>{{toplam}}</b></div>
+                <br><br><br>
+                <a class="btn btn-danger" href="/siparis"><b class="siparisver">Sipariş Ver</b></a> 
+
+        </div>
+    </div>
+    
+</div>
+{% else %}
+
+<div class="card text-center">
+    <div class="card-header"> <br> </div>
+    <div class="card-body">
+      <h5 class="card-title"><b>Sepetiniz Boş!</b></h5>
+      <p class="card-text">Devam etmek için lütfen sepetinize ürün ekleyiniz...</p>
+      <a href="/meyvelermenu" class="btn btn-danger">Meyveler</a>
+      <a href="/sebzelermenu" class="btn btn-danger">Sebzeler</a>
+    </div>
+    <div class="card-footer text-muted"> <br> </div>
+  </div>
+
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+        <br><br><br>
+       <!--footer-->
+       <div class="bg-dark text-light text-center" id="footer">
+        <p class="alighn-middle p-5 mb-0">
+            <span>Tüm hakları saklıdır &copy; | 2022</span><br>
+            <span><i>Designed by </i> <b>İpek ÇIDIK & Kerem Enes ERSOY</b></span>
+        </p>
+    </div> 
+{% endblock %}

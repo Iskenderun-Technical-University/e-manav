@@ -1,0 +1,28 @@
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<ul class=flashes>
+  {% for category, message in messages %}
+    {% if category == "success" %}
+    <div class="alert alert-{{category}} d-flex align-items-center " role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+      <div class="justify-content-end">
+       <b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;"> {{message}} </b>
+       <button type="button" class="btn-close margin-right" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    {% elif category == "danger" %}
+    <div class="alert alert-{{category}} d-flex align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+        <b style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;"> {{message}} </b>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endif %}
+{% endwith %}
+
+

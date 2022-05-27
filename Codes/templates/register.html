@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block body %}
+{% from 'includes/formhelpers.html' import render_field %}
+
+<form method = "post">
+    {{ render_field(form.Name,class = "form-control form-control")}}
+    {{ render_field(form.SurName,class = "form-control form-control")}}
+    {{ render_field(form.Password,class = "form-control form-control")}} 
+    {{ render_field(form.Confirm,class = "form-control form-control")}} 
+    {{ render_field(form.Email,class = "form-control form-control", placeholder="email@example.com")}}
+    {{ render_field(form.Phone,class = "form-control form-control", placeholder="(5XX) ___ - __ __")}}
+    {{ render_field(form.Adress,class = "form-control form-control")}}
+<button type="submit" class="btn btn-primary">Kayıt Ol</button>
+</form>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,326 @@
+{% extends "index.html" %}
+
+
+
+{% block body %}
+
+<section class="p-5 text-center urunler">
+  <div class="container">
+      <h2 class="mb-5 font-weight-bold">MEYVELER</h2> 
+      <hr class="ayrac"><i class="fa-solid fa-basket-shopping ibeyaz"></i>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/ananas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ananas</h5>
+              <p class="card-text">15 TL/adet</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Ananas">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">adet</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div> 
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/avokado.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Avokado</h5>
+              <p class="card-text">6 TL/adet</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Avokado">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">adet</span>        
+              </div>            
+              <button class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/armut.jpg" class="card-img-top" alt="...">
+
+            <div class="card-body">
+              <h5 class="card-title">Armut</h5>
+              <p class="card-text">11 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Armut">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>    
+        </form>
+
+        
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/cilek.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Çilek</h5>
+              <p class="card-text">30 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Cilek">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/elma.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Elma</h5>
+              <p class="card-text">5 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Elma">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/erik.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Erik</h5>
+              <p class="card-text">35 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Erik">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/karpuz.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Karpuz</h5>
+              <p class="card-text">8 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Karpuz">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/kavun.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Kavun</h5>
+              <p class="card-text">7 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Kavun">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/kiraz.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Kiraz</h5>
+              <p class="card-text">12 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Kiraz">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/kivi.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Kivi</h5>
+              <p class="card-text">14 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Kivi">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/limon.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Limon</h5>
+              <p class="card-text">10 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Limon">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/mandalina.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mandalina</h5>
+              <p class="card-text">6 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Mandalina">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/mango.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mango</h5>
+              <p class="card-text">16 TL/adet</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Mango">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">adet</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/muz.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Muz</h5>
+              <p class="card-text">16 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Muz">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/portakal.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Portakal</h5>
+              <p class="card-text">7 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Portakal">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/incir.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">İncir</h5>
+              <p class="card-text">10 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Incir">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/seftali.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Şeftali</h5>
+              <p class="card-text">13 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Seftali">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+
+        <form class="col" method="post" action="/meyvelermenu">
+          <div class="card h-100 shadow urunCard">
+            <img src="static/img/uzum.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Üzüm</h5>
+              <p class="card-text">8 TL/kg</p>
+
+              <div class="input-group mb-1 col-auto">                
+                <input type="hidden" name="product" value="Uzum">
+                <input type="number" name = "bakiye" class="form-control" placeholder="Miktar giriniz..." aria-label="miktar" min="1" max="20">  
+                <span class="input-group-text">kg</span>        
+              </div>            
+              <button  class="btn btn-danger sepetekleButton" type="submit" id="button">Sepete Ekle</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</section>
+<div class="back-to-sebze"><a href="/sebzelermenu">&leftarrow;<span class="text-muted"> Sebzeler</span></a></div>
+
+
+{% endblock %}

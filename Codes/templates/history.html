@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+
+<div class="row">
+    <div class="col-md-8 cart">
+        
+        <div class="title">
+            <div class="row">
+                <div class="col"><h4><b>Ürünler</b></h4></div>
+                <div class="col-3 align-self-auto text-left"><b>Adet / Kg</b></div>
+                <div class="col-4 align-self-auto text-left"><b>Toplam</b></div>
+          
+            </div>
+        </div>   
+        {% for data in data_2 %} 
+        <div class="row border-top border-bottom">    
+            <div class="row main align-items-center">
+                <div class="col-2"><img class="img-fluid" src="{{data['img_url']}}"></div>
+                <div class="col">
+                    <div class="row">{{data['urun_isim']}}</div>
+                    <div class="row text-muted">{{data['fiyat']}} TL</div>
+                </div>
+                <div class="col">
+                   <a href="#">{{data['adet']}}</a>
+                </div>
+
+                <div class="col">₺ {{data['islem_tutar']}}</div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    
+
+    <!--ödeme kısmı-->
+    <div class="col-md-3 summary">
+        <br> 
+        <div><h5><b>Fatura</b></h5></div>
+
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+            {% for data in data_2 %}
+            <div>
+                <span class="rounded-left"><b>{{data['urun_isim']}}</b></span>
+                <span class="text-right urunFiyat">₺ {{data['islem_tutar']}}</span>
+            </div>
+            {% endfor %}
+            <br><br>
+            <div class="col text-right"><b>Toplam Tutar : </b> ₺ <b>{{result}}</b></div>
+            <br><br><br>
+
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

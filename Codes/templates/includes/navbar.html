@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navbarStyle">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">E-MANAV</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>    
+    </button>
+
+    <div class="collapse navbar-collapse" id="#navbarSupportedContent">
+      <ul class="navbar-nav mr-auto anasayfa">
+        <li class="nav-item">
+          <a class="nav-link active" href="/"><b class="anasayfa"> Anasayfa </b><span class="sr-only"></span></a>
+        </li>
+        {% if session["status"] == "homepage" %}
+        <li class="nav-item">
+          <a class="nav-link active" href="#hakkimizda"><b>Hakkımızda</b></a>
+        </li>
+        {% endif %}
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b>Ürünler</b></a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="/meyvelermenu">Meyveler</a></li>
+            <li><a class="dropdown-item" href="/sebzelermenu">Sebzeler</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active fa-solid fa-cart-shopping isepet" href="/basket"><i class="isepetim">Sepetim</i></a>
+        </li>
+
+        {% if session["logged_in"] %}
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary"><a class="nav-link active" href="/myaccount"><b>Hesabım</b></a></button>
+        </li>
+        <li class="nav-item ">
+          <button type="button" class="btn btn-outline-secondary"><a class="nav-link active" href="/logout"><b>Çıkış</b></a></button>
+        </li>
+        {% else %}
+
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary"><a class="nav-link active" href="/register">Kayıt Ol</a></button>
+        </li>    
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary"><a class="nav-link active" href="/login">Giriş Yap</a></button>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav> 
+<br>

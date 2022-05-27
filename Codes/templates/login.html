@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+    <div class="container login">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card border-0 shadow rounded-3 my-5">
+            <div class="card-body p-4 p-sm-5">
+              <form method="post">
+            
+                <div class="form-outline mb-4">
+                  <b><label class="form-label" for="e_mail">Email</label></b>
+                  <input type="email" name="e_maill" id="e_mail" class="form-control" />                  
+                </div>
+              
+                <div class="form-outline mb-4">
+                  <b><label class="form-label" for="password">Şifre</label></b>
+                  <input type="password" name="passwordd" id="password" class="form-control" />                  
+                </div>
+              
+
+
+                <button type="submit" class="btn btn-primary btn-block mb-4">Oturum Açın</button>
+
+                <div class="text-center">
+                  <p>Üye değil misiniz? <a href="/register">Kayıt ol</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
+

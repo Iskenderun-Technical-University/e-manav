@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div class="d-flex align-items-start menu hesabim">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link active btn-danger" id="v-pills-bilgiler-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bilgiler" type="button" role="tab" aria-controls="v-pills-bilgiler" aria-selected="true">Kullanıcı Bilgilerim</button>
+      <button class="nav-link btn-danger" id="v-pills-basket-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basket" type="button" role="tab" aria-controls="v-pills-basket" aria-selected="false">Siparişlerim</button>
+      <button class="nav-link btn-danger" id="v-pills-sifreAyarlari-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sifreAyarlari" type="button" role="tab" aria-controls="v-pills-sifreAyarlari" aria-selected="false">Şifre Ayarları</button>  
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-bilgiler" role="tabpanel" aria-labelledby="v-pills-bilgiler-tab">        
+        <form class="">
+          <div class="mx-md-5">
+            <b><label for="name">İsim: </label></b>
+            <input type="text" class="form-control bilgi" id="name" value="{{data['name']}}" readonly>
+          </div>
+          <br>
+          <div class="mx-md-5">
+            <b><label for="surname">Soyisim: </label></b>
+            <input type="text" class="form-control bilgi" id="surname" value="{{data['surname']}}" readonly>
+          </div>
+          <br>
+          <div class="mx-md-5">
+            <b><label for="email">Email: </label></b>
+            <input type="text" class="form-control bilgi" id="email" value="{{data['email']}}" readonly>
+          </div>
+          <br>
+          <div class="mx-md-5">
+            <b><label for="number">Telefon Numarası: </label></b>
+            <input type="text" class="form-control bilgi" id="number" value="{{data['number']}}" readonly>
+          </div>
+          <br>          
+          <div class="mx-md-5">
+            <b><label for="adress">Adres: </label></b>
+            <input type="text" class="form-control bilgi" id="adress" value="{{data['adress']}}" readonly>
+          </div>          
+        </form>
+      </div>
+
+      <div class="tab-pane fade" id="v-pills-basket" role="tabpanel" aria-labelledby="v-pills-basket-tab">
+        <div class="list-group mx-md-5">
+           
+        {% if session['Byt'] %}
+          
+        {% for DLL in date_last_list %}
+
+          <form action="/history" method="post">
+          <input type="hidden" name = "idm" value = "{{DLL['idm']}}">
+          <button type="submit" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between mt-2">
+              <h5 class="mb-1">{{DLL['islem_tutar']}} TL Tutarındaki Siparişinize Gitmek İçin Tıklayınız... &nbsp;&nbsp;&nbsp;</h5>       
+              <small><i>{{DLL['last']}} Önce</i></small>
+            </div>
+            <br>
+            <p class="mb-1">Adres: {{DLL['adres']}}</p>
+            <small>Tarih: {{DLL['date']}}</small>
+          </button>
+        </form>
+        
+        {% endfor %}
+
+        {% else %}
+
+          <div class="mx-md-5 gecmisBos">
+            <h5 class=""><b>Sipariş geçmişiniz bulunmamaktadır!</b></h5>
+          </div>
+        {% endif %}
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="v-pills-sifreAyarlari" role="tabpanel" aria-labelledby="v-pills-sifreAyarlari-tab">
+        <form action="/changepassword" method="post">
+          <div class="">     
+            <div class="form-outline mb-4 mx-md-5">
+              <b><label class="form-label" for="password">Mevcut Şifre</label></b>
+              <input type="password" name="passwordd" id="password" class="form-control" />   
+            </div>
+            <div class="form-outline mb-4 mx-md-5">
+              <b><label class="form-label" for="password">Yeni Şifre</label></b>
+              <input type="password" name="newpassword1" id="password" class="form-control" />                  
+            </div>
+            <div class="form-outline mb-4 mx-md-5">
+              <b><label class="form-label" for="password">Yeni Şifre (Tekrar)</label></b>
+              <input type="password" name="newpassword2" id="password" class="form-control" />                  
+            </div>        
+          </div>       
+          <button class="btn btn-secondary mx-md-5" type="submit">Şifre Değiştir</button>   
+        </form>
+      </div>
+  </div>
+
+{% endblock %}
+
+
+
